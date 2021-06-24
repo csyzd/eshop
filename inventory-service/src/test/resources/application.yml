@@ -1,0 +1,14 @@
+server:
+  port: 10020
+
+logging:
+  level:
+    root: debug
+  dir:  /tmp/e-shop/logs
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/eshop
+    username: root
+    password: MyRoot_123

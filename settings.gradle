@@ -8,4 +8,4 @@
  */
 
 rootProject.name = 'e-shop'
-include('app')
+include('app', 'inventory-service', 'payment-service', 'order-service', 'shipping-service')
