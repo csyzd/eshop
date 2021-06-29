@@ -1,10 +1,25 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Add Product: Success</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Add Product</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="" th:href="@{/asset/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css">
 </head>
 <body>
-<p th:text="'Congratulations, you have successfully added a product:' + ${product} + '!'"/>
+
+<div class="container">
+    <form action="add-product" method="post">
+        <div class="row">
+            <div class="col-12 m-4">
+                <p th:text="'Congratulations, you have successfully added a product:' + ${product} + '!'"/>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript" th:src="@{/asset/popper/popper.js}"></script>
+<script type="text/javascript" th:src="@{/asset/bootstrap/js/bootstrap.js}"></script>
+
 </body>
 </html>
