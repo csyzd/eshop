@@ -1,10 +1,6 @@
 package cn.yzd3008.java.eshop.app.biz.entity;
 
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -12,6 +8,7 @@ import javax.persistence.*;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 @Entity
 @Table(name = "product")
 public class ProductEntity {
@@ -25,5 +22,5 @@ public class ProductEntity {
     private String productName;
 
     @Column(name = "product_price", length = 8)
-    private Integer price;
+    private Integer productPrice;
 }
