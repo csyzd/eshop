@@ -12,4 +12,6 @@ public interface ProductRepository extends CrudRepository<ProductEntity, Integer
     ProductEntity findByProductId(Integer productId);
 
     List<ProductEntity> findByProductName(String productName);
+
+    List<ProductEntity> findAll();
 }

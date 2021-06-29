@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @Slf4j
 public class ProductService {
@@ -19,5 +21,14 @@ public class ProductService {
         ProductEntity product = this.productRepository.save(productEntity);
 
         return product;
+    }
+
+    public List<ProductEntity> getAllProducts(){
+
+        log.debug("=== Start: ProductService#getAllProducts()");
+        List<ProductEntity> products = this.productRepository.findAll();
+        log.debug("=== All products: {}", products);
+
+        return products;
     }
 }
