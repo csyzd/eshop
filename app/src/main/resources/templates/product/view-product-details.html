@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>View Product List</title>
+    <title>Product Details</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="" th:href="@{/asset/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css">
@@ -9,11 +9,20 @@
 <body>
 
 <div class="container">
-    <div th:each="product : ${products}" class="row">
-        <p th:text="${product.productId}" class="col-m-12 col-lg-3 "></p>
-        <p th:text="${product.productName}" class="col-m-12 col-lg-3 "></p>
-        <p th:text="${product.productPrice}" class="col-m-12 col-lg-3 "></p>
-        <a th:href="@{/product/view-product-details/{productId}(productId=${product.productId})}" class="col-m-12 col-lg-3">View</a>
+    <div class="row">
+        <div class="col-12 m-4">
+            <p th:text="${product.productName}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 m-4">
+            <p th:text="${product.productPrice}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 m-4">
+            <a th:href="@{/shopping-cart/add-product/{productId}(productId=${product.productId})}">Add to Shopping Cart</a>
+        </div>
     </div>
 </div>
 

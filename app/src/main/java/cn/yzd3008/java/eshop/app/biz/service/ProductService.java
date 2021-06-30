@@ -31,4 +31,12 @@ public class ProductService {
 
         return products;
     }
+
+    public ProductEntity getProductByProductId(Integer productId){
+        log.debug("=== Start: ProductService#getProductByProductId()");
+        ProductEntity productEntity = this.productRepository.findByProductId(productId);
+        log.debug("=== Found product: {}", productEntity);
+
+        return productEntity;
+    }
 }

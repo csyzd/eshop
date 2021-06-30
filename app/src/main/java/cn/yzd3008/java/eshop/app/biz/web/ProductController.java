@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -39,4 +40,18 @@ public class ProductController {
         log.debug("=== End: postAddProduct");
         return "product/add-product-success";
     }
+
+
+    @GetMapping("/view-product-details/{product-id}")
+    public String getProductDetailsPage(Model model, @PathVariable("product-id") Integer productId){
+
+        log.debug("=== Start: getProductDetailsPage()/{}", productId);
+
+        ProductEntity productEntity = this.productService.getProductByProductId(productId);
+        model.addAttribute("product", productEntity);
+        log.debug("=== End: getProductDetailsPage");
+
+        return "product/view-product-details";
+    }
+
 }
